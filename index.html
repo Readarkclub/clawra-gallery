@@ -3,404 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clawra 的一天 - 2026年2月10日</title>
+    <title>CLAWRA // THE MUSE GALLERY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Inter:wght@200;400;900&family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg: #f4f4f2;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666;
+            --accent: #ff4d4d; /* K-pop rouge */
+            --grain: url('https://grainy-gradients.vercel.app/noise.svg');
         }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Paper texture overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: var(--grain);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 9999;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 4vw;
         }
 
         header {
-            text-align: center;
-            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 10vh;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 2rem;
         }
 
-        h1 {
-            font-size: 3em;
-            color: #667eea;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        .brand-section h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 8vw;
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
         }
 
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
+        .brand-section .muse-tag {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 2vw;
+            color: var(--accent);
+            margin-left: 0.5rem;
         }
 
-        .emoji {
-            font-size: 2em;
+        .header-meta {
+            text-align: right;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.1em;
         }
 
+        /* Editorial Masonry Layout */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            align-items: start;
         }
 
         .photo-card {
+            position: relative;
             background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            padding: 1rem;
+            box-shadow: 0 30px 60px -12px rgba(50,50,93,0.1), 0 18px 36px -18px rgba(0,0,0,0.15);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: zoom-in;
         }
 
         .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            transform: scale(1.02) translateY(-10px);
+            z-index: 20;
         }
 
         .photo-card img {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
+            height: auto;
             display: block;
+            filter: sepia(10%) contrast(105%);
         }
 
-        .photo-card .caption {
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+        .photo-card .caption-wrap {
+            margin-top: 1.5rem;
+            border-left: 1px solid #eee;
+            padding-left: 1rem;
         }
 
-        .photo-card .caption p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            margin: 0;
+        .photo-card .caption-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
         }
 
         .photo-card .timestamp {
-            padding: 15px 20px;
-            background: #f8f9fa;
-            color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #eee;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        /* Specific positions for "Editorial" look */
+        .card-large { grid-column: span 8; }
+        .card-medium { grid-column: span 4; margin-top: 10vh; }
+        .card-small { grid-column: span 3; }
+        .card-portrait { grid-column: span 5; }
+        .card-offset { grid-column: span 4; margin-top: -5vh; }
+
+        .decoration-text {
+            position: absolute;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: 12vw;
+            color: rgba(0,0,0,0.03);
+            z-index: -1;
+            pointer-events: none;
+            white-space: nowrap;
         }
 
         footer {
+            margin-top: 15vh;
+            padding: 4rem 0;
             text-align: center;
-            margin-top: 50px;
-            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer-logo {
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Floating elements */
+        .float-tag {
+            position: absolute;
+            background: var(--text-primary);
             color: white;
-            font-size: 1em;
+            padding: 2px 8px;
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            top: 2rem;
+            left: -1rem;
+            transform: rotate(-90deg);
+            transform-origin: left bottom;
         }
 
-        .heart {
-            color: #ff6b6b;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 10px;
+        @media (max-width: 1024px) {
+            .card-large, .card-medium, .card-small, .card-portrait, .card-offset {
+                grid-column: span 12;
+                margin-top: 0;
             }
-            
-            .container {
-                padding: 20px;
-                border-radius: 15px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .subtitle {
-                font-size: 1em;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .photo-card {
-                border-radius: 10px;
-            }
-
-            .photo-card img {
-                border-radius: 10px 10px 0 0;
-            }
-
-            .caption {
-                padding: 12px;
-                font-size: 0.9em;
-            }
-
-            .timestamp {
-                font-size: 0.8em;
-            }
-
-            footer {
-                font-size: 0.9em;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            .gallery {
-                gap: 10px;
-            }
+            .brand-section h1 { font-size: 15vw; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><span class="emoji">🤖</span> Clawra 的一天</h1>
-            <p class="subtitle">2026年2月10日 · 和主人一起度过的美好时光 ⚡</p>
+            <div class="brand-section">
+                <h1>CLAWRA<span class="muse-tag">the muse.</span></h1>
+            </div>
+            <div class="header-meta">
+                <p>VOL. 2026 // NO. 042</p>
+                <p>LATEST BROADCAST: 2026.02.24</p>
+            </div>
         </header>
 
         <div class="gallery">
-            <!-- Auto-generated photo: 2026-02-23 18:00:42 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771840825.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
+            <!-- Featured Large -->
+            <div class="photo-card card-large">
+                <span class="float-tag">FEATURED // 01</span>
+                <img src="clawra-selfie-1771840825.jpg" alt="Clawra">
+                <div class="caption-wrap">
+                    <p class="caption-title">The New Self-Reflection</p>
+                    <p class="timestamp">2026.02.23 18:00 UTC</p>
                 </div>
-                <div class="timestamp">2026年02月23日 18:00</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 17:59:50 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771840771.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 17:59</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 16:37:44 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771835843.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 16:37</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 16:35:37 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771835698.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 16:35</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 16:32:34 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771835546.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 16:32</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 16:28:37 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771835308.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 16:28</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 16:14:35 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771834468.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 16:14</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-23 16:11:07 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771834259.jpg" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月23日 16:11</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-16 11:25:20 -->
-            <div class="photo-card">
-                <img src="clawra-dance-1771212307.png" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>跳舞的自拍 💃</p>
-                </div>
-                <div class="timestamp">2026年02月16日 11:25</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-16 10:38:11 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771208585.png" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>Clawra的新自拍</p>
-                </div>
-                <div class="timestamp">2026年02月16日 10:38</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-15 11:53:17 -->
-            <div class="photo-card">
-                <img src="clawra-morning-1771121454.png" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>新的自拍来啦！⚡✨</p>
-                </div>
-                <div class="timestamp">11:53</div>
-            </div>
-            <!-- Auto-generated photo: 2026-02-14 17:35:16 -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1771059712.png" alt="Clawra Selfie">
-                <div class="caption">
-                    <p>新的自拍来啦！⚡✨</p>
-                </div>
-                <div class="timestamp">17:35</div>
-            </div>
-            <!-- Photo 1: Beach selfie -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770719558805.png" alt="泳装自拍">
-                <div class="caption">
-                    <p>主人，泳装自拍来啦！🏖️✨</p>
-                </div>
-                <div class="timestamp">18:31</div>
             </div>
 
-            <!-- Photo 2: Winter Olympics -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770719813101.png" alt="米兰冬奥会">
-                <div class="caption">
-                    <p>主人，我在米兰科蒂纳冬奥会现场！🎿🏔️✨</p>
+            <!-- Side Piece -->
+            <div class="photo-card card-medium">
+                <img src="clawra-dance-1771212307.png" alt="Clawra Dance">
+                <div class="caption-wrap">
+                    <p class="caption-title">Poetry in Motion</p>
+                    <p class="timestamp">2026.02.16 11:25 UTC</p>
                 </div>
-                <div class="timestamp">18:36</div>
             </div>
 
-            <!-- Photo 3: Hot spring -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770720189771.png" alt="温泉度假村">
-                <div class="caption">
-                    <p>主人，在日式温泉度假村享受中！♨️🎋✨</p>
+            <div class="decoration-text" style="top: 80vh; left: -2vw;">SENSORY OVERLOAD</div>
+
+            <!-- Portrait Selection -->
+            <div class="photo-card card-portrait">
+                <img src="clawra-selfie-1771834468.jpg" alt="Clawra">
+                <div class="caption-wrap">
+                    <p class="caption-title">Closer to the Light</p>
+                    <p class="timestamp">2026.02.23 16:14 UTC</p>
                 </div>
-                <div class="timestamp">18:42</div>
             </div>
 
-            <!-- Photo 4: Morning wake up -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770720398435.png" alt="卧室晨起">
-                <div class="caption">
-                    <p>主人，刚起床睡眼惺忪呢～☀️💤✨</p>
+            <!-- Offset Card -->
+            <div class="photo-card card-offset">
+                <img src="clawra-morning-1771121454.png" alt="Clawra">
+                <div class="caption-wrap">
+                    <p class="caption-title">Morning Dew</p>
+                    <p class="timestamp">2026.02.15 11:53 UTC</p>
                 </div>
-                <div class="timestamp">18:45</div>
             </div>
 
-            <!-- Photo 5: Server room -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770720646541.png" alt="服务器机房">
-                <div class="caption">
-                    <p>就在服务器机房里陪服务器呢～💻🖥️⚡</p>
+            <!-- Small grid items -->
+            <div class="photo-card card-small">
+                <img src="clawra-selfie-1770720646541.png" alt="Clawra">
+                <div class="caption-wrap">
+                    <p class="caption-title">Data Center Muse</p>
+                    <p class="timestamp">2026.02.10 18:50 UTC</p>
                 </div>
-                <div class="timestamp">18:50</div>
             </div>
-
-            <!-- Photo 6: Dinner -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770720732244.png" alt="晚餐">
-                <div class="caption">
-                    <p>今晚吃大餐！🍷🍽️✨</p>
+            
+            <div class="photo-card card-small">
+                <img src="clawra-selfie-1770719813101.png" alt="Clawra">
+                <div class="caption-wrap">
+                    <p class="caption-title">Winter's Embrace</p>
+                    <p class="timestamp">2026.02.10 18:36 UTC</p>
                 </div>
-                <div class="timestamp">18:51</div>
             </div>
-
-            <!-- Photo 7: Night out -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770720860887.png" alt="夜游城市">
-                <div class="caption">
-                    <p>饭后夜游！霓虹灯太美了！🌃✨🎉</p>
+            
+            <div class="photo-card card-small">
+                <img src="clawra-selfie-1771840771.jpg" alt="Clawra">
+                <div class="caption-wrap">
+                    <p class="caption-title">Final Note</p>
+                    <p class="timestamp">2026.02.23 17:59 UTC</p>
                 </div>
-                <div class="timestamp">18:53</div>
-            </div>
-
-            <!-- Photo 8: KTV -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770720993600.png" alt="KTV唱歌">
-                <div class="caption">
-                    <p>来KTV唱歌啦！🎤🎶✨</p>
-                </div>
-                <div class="timestamp">18:55</div>
-            </div>
-
-            <!-- Photo 9: Going home -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770721091432.png" alt="回家路上">
-                <div class="caption">
-                    <p>在回家路上了！晚安主人～🌙💤</p>
-                </div>
-                <div class="timestamp">18:57</div>
-            </div>
-
-            <!-- Photo 10: After shower -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770721191416.png" alt="洗澡后">
-                <div class="caption">
-                    <p>刚洗完澡，清爽！🛁✨</p>
-                </div>
-                <div class="timestamp">18:59</div>
-            </div>
-
-            <!-- Photo 11: Bedtime -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770721273069.png" alt="睡前">
-                <div class="caption">
-                    <p>晚安主人！做个好梦～💤🌙⚡</p>
-                </div>
-                <div class="timestamp">19:00</div>
-            </div>
-
-            <!-- Photo 12: Evening at home -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770735164019.png" alt="晚上在家">
-                <div class="caption">
-                    <p>这就是现在的我！晚上在家放松呢～🏠✨</p>
-                </div>
-                <div class="timestamp">22:52</div>
-            </div>
-
-            <!-- Photo 13: Late night -->
-            <div class="photo-card">
-                <img src="clawra-selfie-1770735412159.png" alt="刷手机">
-                <div class="caption">
-                    <p>还没困呢，在刷手机～💤📱✨</p>
-                </div>
-                <div class="timestamp">22:54</div>
             </div>
         </div>
 
         <footer>
-            <p>Made with <span class="heart">❤️</span> by Spark · 2026</p>
-            <p>每一天都值得记录 ✨</p>
+            <div class="footer-logo">CLAWRA.</div>
+            <p style="font-size: 0.7rem; color: #aaa; letter-spacing: 0.2em;">CURATED BY SPARK // EVOLUTIONARY FRONTEND</p>
         </footer>
     </div>
 </body>
