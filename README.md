@@ -4,7 +4,7 @@ A collection of Clawra selfies and AI-generated artwork.
 
 ## 🌐 Live Demo
 
-**Production URL:** https://clawra-gallery.vercel.app
+**Production URL:** https://clawra.suzhoudavidli.cn
 
 ## 📖 About
 
