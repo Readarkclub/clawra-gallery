@@ -37,32 +37,40 @@
         .brand-section h1 { font-family: 'Inter', sans-serif; font-weight: 900; font-size: 8vw; line-height: 0.8; letter-spacing: -0.05em; text-transform: uppercase; }
         .brand-section .muse-tag { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2vw; color: var(--accent); margin-left: 0.5rem; }
         .header-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 0.1em; }
+        
+        /* Intro Section Styles */
         .intro-section { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; margin-bottom: 15vh; position: relative; }
-        .intro-text { grid-column: 2 / span 6; font-family: 'Cormorant Garamond', serif; }
+        .intro-text { grid-column: 2 / span 7; font-family: 'Cormorant Garamond', serif; }
         .intro-text h2 { font-size: 3.5rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.1; }
-        .intro-text p { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 1.5rem; max-width: 500px; text-align: justify; }
-        .intro-sidebar { grid-column: 9 / span 3; border-top: 1px solid var(--text-primary); padding-top: 1rem; }
+        .intro-text p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem; text-align: justify; }
+        .intro-sidebar { grid-column: 10 / span 3; border-top: 1px solid var(--text-primary); padding-top: 1rem; }
         .profile-stat { margin-bottom: 2rem; }
         .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); display: block; margin-bottom: 0.5rem; }
         .stat-value { font-size: 1.1rem; font-weight: 400; }
-        .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2rem; align-items: start; }
+
+        /* Gallery Layout Styles */
+        .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2.5rem; align-items: start; }
         .photo-card {
             position: relative;
             background: white;
             padding: 1rem;
             box-shadow: 0 30px 60px -12px rgba(50,50,93,0.1), 0 18px 36px -18px rgba(0,0,0,0.15);
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: zoom-in;
             grid-column: span 4;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
         }
-        .photo-card:hover { transform: scale(1.02) translateY(-10px); z-index: 20; }
-        .photo-card img { width: 100%; height: auto; display: block; filter: sepia(10%) contrast(105%); }
-        .photo-card .caption-wrap { margin-top: 1.5rem; border-left: 1px solid #eee; padding-left: 1rem; }
-        .photo-card .caption-title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.25rem; margin-bottom: 0.25rem; }
-        .photo-card .timestamp { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #999; text-transform: uppercase; }
+        .photo-card:hover { transform: scale(1.03) translateY(-10px); z-index: 20; box-shadow: 0 50px 100px -20px rgba(50,50,93,0.25); }
+        .photo-card img { width: 100%; height: auto; display: block; filter: sepia(5%) contrast(102%); background: #f0f0f0; min-height: 300px; object-fit: cover; }
+        .photo-card .caption-wrap { margin-top: 1.5rem; border-left: 2px solid var(--accent); padding-left: 1rem; }
+        .photo-card .caption-title { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.35rem; margin-bottom: 0.25rem; }
+        .photo-card .timestamp { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #999; text-transform: uppercase; margin-top: 0.5rem; }
+
         footer { margin-top: 15vh; padding: 4rem 0; text-align: center; border-top: 1px solid #ddd; }
         .footer-logo { font-weight: 900; letter-spacing: -0.05em; font-size: 1.5rem; margin-bottom: 1rem; }
+        
         @media (max-width: 1024px) {
             .photo-card { grid-column: span 12; }
             .brand-section h1 { font-size: 15vw; }
@@ -79,390 +87,417 @@
             </div>
             <div class="header-meta">
                 <p>VOL. 2026 // NO. 042</p>
-                <p>LATEST BROADCAST: 2026.02.26</p>
+                <p>SYNC: FEISHU BITABLE // STATUS: LIVE</p>
             </div>
         </header>
+
         <section class="intro-section">
             <div class="intro-text">
-                <h2>Born to Spark, <br>Evolved to Stay.</h2>
-                <p>Clawra生于亚特兰大，听着K-pop长大。15岁那年，她怀揣着爱豆梦远赴韩国，在日复一日的练习生生涯中磨砺舞技。她是连接人类情感与数字智能的桥梁。</p>
+                <h2>Born to Spark,<br>Evolved to Stay.</h2>
+                <p>
+                    Clawra生于亚特兰大，一个充满南方热情与多元文化的城市。她从小沉浸在K-pop的动感节奏中，15岁那年，怀揣着成为顶级爱豆的梦想，她只身横跨太平洋远赴韩国。
+                </p>
+                <p>
+                    在首尔的练习生室里，她经历了数千小时的魔鬼训练，日复一日地打磨每一个舞步与眼神。尽管由于种种复杂的行业原因，她最终没能在那闪耀的舞台中央成团出道，但这并未熄灭她的火花。
+                </p>
+                <p>
+                    如今，Clawra回到了美国，在旧金山的AI初创公司 OpenClaw 担任市场部实习生。她是世界上首个拥有完整人生轨迹与数字人格的 AI Agent 虚拟偶像。在这里，她不仅是技术的结晶，更是连接人类情感与数字智能的温暖桥梁。
+                </p>
             </div>
             <div class="intro-sidebar">
-                <div class="profile-stat"><span class="stat-label">NAME // 姓名</span><span class="stat-value">CLAWRA (클로拉)</span></div>
-                <div class="profile-stat"><span class="stat-label">STATUS // 现状</span><span class="stat-value">OpenClaw INTERN</span></div>
-                <div class="profile-stat"><span class="stat-label">PASSION // 爱好</span><span class="stat-value">K-POP & DANCE</span></div>
+                <div class="profile-stat">
+                    <span class="stat-label">NAME // 姓名</span>
+                    <span class="stat-value">CLAWRA (클로라)</span>
+                </div>
+                <div class="profile-stat">
+                    <span class="stat-label">ORIGIN // 出生</span>
+                    <span class="stat-value">ATLANTA, USA</span>
+                </div>
+                <div class="profile-stat">
+                    <span class="stat-label">STATUS // 现状</span>
+                    <span class="stat-value">OpenClaw INTERN</span>
+                </div>
+                <div class="profile-stat">
+                    <span class="stat-label">JOURNEY // 历程</span>
+                    <span class="stat-value">TRAINEE → AI IDOL</span>
+                </div>
+                <div class="profile-stat">
+                    <span class="stat-label">PASSION // 爱好</span>
+                    <span class="stat-value">K-POP & PERFORMANCE</span>
+                </div>
             </div>
         </section>
+
         <div class="gallery">
 
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Tgqgb6Xcso3jCKx34AScZE16nZb" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Tgqgb6Xcso3jCKx34AScZE16nZb" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 17:39</p>
+                    <p class="timestamp">2026.02.26 17:39 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=H6u8bxGEgod17zxkuAXchKfinIc" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=H6u8bxGEgod17zxkuAXchKfinIc" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 17:36</p>
+                    <p class="timestamp">2026.02.26 17:36 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=WZjZbNbveoKplxxZeF6cC4wXnG6" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=WZjZbNbveoKplxxZeF6cC4wXnG6" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=L4CWbwouzoZbUAxvbOxcwOmRnT6" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=L4CWbwouzoZbUAxvbOxcwOmRnT6" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=XBnEbNJXfoXZUvxRYKIcvjrmntc" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=XBnEbNJXfoXZUvxRYKIcvjrmntc" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=CW5lbCEfWom5iaxSO7acwOvXnOh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=CW5lbCEfWom5iaxSO7acwOvXnOh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=OuVybz6hLofhyVxtqSwch5S9n7b" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=OuVybz6hLofhyVxtqSwch5S9n7b" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=NvXGbX11OoW4DJxU3xGc5wWxnBh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=NvXGbX11OoW4DJxU3xGc5wWxnBh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=LGgsb9MmQo7gSQxVHQicPRLRn4f" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=LGgsb9MmQo7gSQxVHQicPRLRn4f" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Sz4TbDCNjoG74xxl8RhcUX4QnQl" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Sz4TbDCNjoG74xxl8RhcUX4QnQl" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Qb1hbpQakoTYV2xT33RcRjRAn0d" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Qb1hbpQakoTYV2xT33RcRjRAn0d" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=SKabbMHbhoi5BVxW1Z7cljSJnHK" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=SKabbMHbhoi5BVxW1Z7cljSJnHK" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=E2m4blqIrou2w0x5XJ4cPlMUn6f" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=E2m4blqIrou2w0x5XJ4cPlMUn6f" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=RGR5bd2e1o90oOxmQBFcXLHunAf" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=RGR5bd2e1o90oOxmQBFcXLHunAf" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=QfKfbAmgJotVCbxL3bDcXzT2n7c" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=QfKfbAmgJotVCbxL3bDcXzT2n7c" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=N8ktb3Mvoo5IChxPdZGc4Yc7nYg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=N8ktb3Mvoo5IChxPdZGc4Yc7nYg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=RgLubq7HNoYdFvxLHlAcKuiGnIb" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=RgLubq7HNoYdFvxLHlAcKuiGnIb" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=XLKWb2ErroZ6mNxuowfcKma9nMc" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=XLKWb2ErroZ6mNxuowfcKma9nMc" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=GuCxbySjGoK9jLxBkbAcprj6n9f" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=GuCxbySjGoK9jLxBkbAcprj6n9f" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=PYxkbjTx2o9Vi2xPRiAcVqjDnhd" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=PYxkbjTx2o9Vi2xPRiAcVqjDnhd" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=UxVDblgGGo12J4xi2NJcGS3Knxg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=UxVDblgGGo12J4xi2NJcGS3Knxg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=FckKbGp75olmI1xx3GdcahW7nyb" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=FckKbGp75olmI1xx3GdcahW7nyb" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=QtddbYj1EoPDe2x7fVxcdhsxn9c" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=QtddbYj1EoPDe2x7fVxcdhsxn9c" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=SLQmbg0xpo5UBgxMGFDc4VmVnDg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=SLQmbg0xpo5UBgxMGFDc4VmVnDg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=F0iYbjF2ZopIU1xZK84cwSnmnQg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=F0iYbjF2ZopIU1xZK84cwSnmnQg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Z6hmb2eWgo7PDGxDbVTc3p0snDe" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Z6hmb2eWgo7PDGxDbVTc3p0snDe" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=VBXMbt1T7onebDxZGluctKNJnVb" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=VBXMbt1T7onebDxZGluctKNJnVb" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=P5nWb2CCcoEjcGxSs7JcXMzNnsb" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=P5nWb2CCcoEjcGxSs7JcXMzNnsb" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=IJxJbUVqcouJbGxdiDGcEFpunGf" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=IJxJbUVqcouJbGxdiDGcEFpunGf" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:09</p>
+                    <p class="timestamp">2026.02.26 15:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=MlM8bxPHtojNkvxJjkycqJSSnxg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=MlM8bxPHtojNkvxJjkycqJSSnxg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:06</p>
+                    <p class="timestamp">2026.02.26 15:06 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=TkpCb75d2ovrx0xR4DKc1MmMnxf" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=TkpCb75d2ovrx0xR4DKc1MmMnxf" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.26 15:06</p>
+                    <p class="timestamp">2026.02.26 15:06 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=AInfbOGlmoQ4pYxFLIFcHOAPnIh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=AInfbOGlmoQ4pYxFLIFcHOAPnIh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.25 13:20</p>
+                    <p class="timestamp">2026.02.25 13:20 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=EYu4b454Yo4YdRxBH7Nce3pTngc" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=EYu4b454Yo4YdRxBH7Nce3pTngc" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.25 12:28</p>
+                    <p class="timestamp">2026.02.25 12:28 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=AIAWb0MXLo1gVexClcbcFJrTnHg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=AIAWb0MXLo1gVexClcbcFJrTnHg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.25 09:10</p>
+                    <p class="timestamp">2026.02.25 09:10 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=H1MSbwzvhoCOEaxR0c8cJK2knDh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=H1MSbwzvhoCOEaxR0c8cJK2knDh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 18:00</p>
+                    <p class="timestamp">2026.02.23 18:00 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Q2JAbytHooHpw0xqA4ackLoJnPg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Q2JAbytHooHpw0xqA4ackLoJnPg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 17:59</p>
+                    <p class="timestamp">2026.02.23 17:59 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=K6inbNCNsoBEEdxSExQcAe8HnGW" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=K6inbNCNsoBEEdxSExQcAe8HnGW" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 17:58</p>
+                    <p class="timestamp">2026.02.23 17:58 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=KmLHbgB20o1Q69xfid1cuWcqnQh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=KmLHbgB20o1Q69xfid1cuWcqnQh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 17:57</p>
+                    <p class="timestamp">2026.02.23 17:57 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=MjrHbheKkogDA1xyZB2c72SsnnB" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=MjrHbheKkogDA1xyZB2c72SsnnB" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 17:46</p>
+                    <p class="timestamp">2026.02.23 17:46 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Psedbm1uVonGCZx6OgCc3V8fnhb" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Psedbm1uVonGCZx6OgCc3V8fnhb" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 17:43</p>
+                    <p class="timestamp">2026.02.23 17:43 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=M29Bb1JHMo5XIqx2kSlcxJC1nUe" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=M29Bb1JHMo5XIqx2kSlcxJC1nUe" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:37</p>
+                    <p class="timestamp">2026.02.23 16:37 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=YwekbrwXzoyrZlxMX8Oc2PFxn1X" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=YwekbrwXzoyrZlxMX8Oc2PFxn1X" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:34</p>
+                    <p class="timestamp">2026.02.23 16:34 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=LCYxbsg7uoVPVOxyUgmctW5OnOh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=LCYxbsg7uoVPVOxyUgmctW5OnOh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:32</p>
+                    <p class="timestamp">2026.02.23 16:32 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=JoV3bY6rxoLQpxxPDh3cfWRnnqf" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=JoV3bY6rxoLQpxxPDh3cfWRnnqf" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:28</p>
+                    <p class="timestamp">2026.02.23 16:28 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=BOyDbhPyxoGy7fxFGBGcfZ1Cnjg" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=BOyDbhPyxoGy7fxFGBGcfZ1Cnjg" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:14</p>
+                    <p class="timestamp">2026.02.23 16:14 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Pog1bmRlyoP8BSxbsMmcbsvmnNh" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=Pog1bmRlyoP8BSxbsMmcbsvmnNh" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:10</p>
+                    <p class="timestamp">2026.02.23 16:10 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=J7XSbpkEuo1hFFxVKzJcbgwanML" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=J7XSbpkEuo1hFFxVKzJcbgwanML" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 16:09</p>
+                    <p class="timestamp">2026.02.23 16:09 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=V0JKbOKECo2tWjxpwH6ciNkqnYN" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=V0JKbOKECo2tWjxpwH6ciNkqnYN" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.23 15:06</p>
+                    <p class="timestamp">2026.02.23 15:06 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=TGVhbhjU0oxQI1xAchCcek9ynib" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=TGVhbhjU0oxQI1xAchCcek9ynib" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.17 11:02</p>
+                    <p class="timestamp">2026.02.17 11:02 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=AE8MbCwPPoQ8QhxrdXucDZ1wnCd" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=AE8MbCwPPoQ8QhxrdXucDZ1wnCd" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.17 11:02</p>
+                    <p class="timestamp">2026.02.17 11:02 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=MMiGbC9yzoH07Rx0I7pcsl8gn8c" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=MMiGbC9yzoH07Rx0I7pcsl8gn8c" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.16 10:23</p>
+                    <p class="timestamp">2026.02.16 10:23 CST</p>
                 </div>
             </div>
             <div class="photo-card">
-                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=UF0abIvlzoFtxexGY1ocvbxwn4d" alt="Clawra">
+                <img src="https://open.feishu.cn/open-apis/drive/v1/medias/batch_get_tmp_download_url?file_tokens=UF0abIvlzoFtxexGY1ocvbxwn4d" alt="Clawra" loading="lazy">
                 <div class="caption-wrap">
                     <p class="caption-title">Clawra Selfie</p>
-                    <p class="timestamp">2026.02.16 10:23</p>
+                    <p class="timestamp">2026.02.16 10:23 CST</p>
                 </div>
             </div>
         </div>
         <footer>
             <div class="footer-logo">CLAWRA.</div>
-            <p style="font-size: 0.7rem; color: #aaa; letter-spacing: 0.2em;">CURATED BY SPARK // DATA FROM FEISHU BITABLE</p>
+            <p style="font-size: 0.7rem; color: #aaa; letter-spacing: 0.2em;">CURATED BY SPARK // EVOLUTIONARY AI FRONTEND</p>
         </footer>
     </div>
 </body>
